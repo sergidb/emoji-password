@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #2196F3;
+        }
+
+        .layout {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .user-control {
+            user-select: none;
+            cursor: pointer;
+            text-align: center;
+            color: #fff;
+        }
+
+        .user-control .user-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 10px;
+            background-size: cover;
+            border: 5px solid #B3E5FC;
+            box-shadow: rgba(255, 255, 255, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+            box-shadow: rgba(255,255,255, 0.2) 0px 7px 29px 0px;
+        }
+
+        .user-control .user-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+            margin: .5rem;
+        }
+
+
+        /* Password keyboard */
+        .emoji-keyboard {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            justify-content: center;
+            align-content: center;
+            gap: 2rem;
+            user-select: none;
+        }
+
+        .emoji-keyboard-item {
+            font-size: 48px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        #password-message {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;            
+            text-align: center;
+            font-size: 48px;
+            color: #fff;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        #content {
+            font-size: 48px;
+            color: #fff;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        button {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+            background-color: #2196F3;
+            border: 5px solid #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .collapsed { display: none !important; }
+
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="layout" id="users">
+        <div class="user-control">
+            <div class="user-avatar" id="user1" style="background-image: url(https://i.pravatar.cc/250?u=a2)"></div>
+            <p class="user-name">Emily</p>
+            <span class="user-subtitle">(🐶🐼🐸)</span>
+        </div>
+        <div class="user-control">
+            <div class="user-avatar" id="user2" style="background-image: url(https://i.pravatar.cc/251?u=a29834)"></div>
+            <p class="user-name">Hannah</p>
+            <span class="user-subtitle">(🐵🐷🐶)</span>
+        </div>
+        <div class="user-control">
+            <div class="user-avatar" id="user3" style="background-image: url(https://i.pravatar.cc/252?u=fake@correu.com)"></div>
+            <p class="user-name">Olivia</p>
+            <span class="user-subtitle">(🐱🐧🐔)</span>
+        </div>
+        
+        
+    </div>
+
+    <div class="layout collapsed" id="password">
+        <div class="emoji-keyboard">
+            <div class="emoji-keyboard-item">🐶</div>
+            <div class="emoji-keyboard-item">🐱</div>
+            <div class="emoji-keyboard-item">🐻</div>
+            <div class="emoji-keyboard-item">🦊</div>
+            <div class="emoji-keyboard-item">🐼</div>
+            <div class="emoji-keyboard-item">🐨</div>
+            <div class="emoji-keyboard-item">🐯</div>
+            <div class="emoji-keyboard-item">🦁</div>
+            <div class="emoji-keyboard-item">🐮</div>
+            <div class="emoji-keyboard-item">🐷</div>
+            <div class="emoji-keyboard-item">🐸</div>
+            <div class="emoji-keyboard-item">🐵</div>
+            <div class="emoji-keyboard-item">🐔</div>
+            <div class="emoji-keyboard-item">🐧</div>
+            <div class="emoji-keyboard-item">🐦</div>
+            <div class="emoji-keyboard-item">🐤</div>
+        </div>
+    </div>
+
+    <p id="password-message" class="collapsed">SUCCESS</p>
+
+    <div class="layout collapsed" id="content">
+        <span>
+            <span id="username"></span>'s protected content
+        </span>
+        <button onclick="showUsers()">Exit</button>
+    </div>
+    
+      
+
+    <script src="script.js"></script>
+</body>
+</html>
